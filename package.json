@@ -2,7 +2,7 @@
     "name": "tsk",
     "displayName": "tsk",
     "description": "",
-    "version": "0.2.0",
+    "version": "0.0.1",
     "publisher": "tsk",
     "repository": {
         "url": "https://github.com/chasinglogic/vscode-tsk",
