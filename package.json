@@ -4,6 +4,10 @@
     "description": "",
     "version": "0.0.1",
     "publisher": "tsk",
+    "repository": {
+        "url": "https://github.com/chasinglogic/vscode-tsk",
+        "type": "git"
+    },
     "engines": {
         "vscode": "^1.25.0"
     },
