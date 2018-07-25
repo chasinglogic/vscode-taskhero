@@ -1,7 +1,7 @@
 'use strict';
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import { window, commands, ExtensionContext, StatusBarAlignment } from 'vscode';
+import { window, commands, StatusBarItem, ExtensionContext, StatusBarAlignment } from 'vscode';
 import { workingOn, completeTask, newTaskInput, incompleteTasks } from './tsk';
 import { commandWithInput, commandFrom, commandWithQuickPick } from './utils';
 
