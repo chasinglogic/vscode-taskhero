@@ -6,28 +6,28 @@ function runCmd(cmd: string, msg?: string): Thenable<string> {
         process.exec(cmd, (err, stdout, stderr) => {
             if (err) {
                 if (msg) {
-                    vscode.window.showWarningMessage(msg)
+                    vscode.window.showWarningMessage(msg);
                 } else {
-                    vscode.window.showWarningMessage(`Error running tsk cmd ${cmd}`)
+                    vscode.window.showWarningMessage(`Error running task cmd ${cmd}`);
                 }
 
-                console.log(stderr)
-                return reject(stderr)
+                console.log(stderr);
+                return reject(stderr);
             }
 
-            return resolve(stdout)
-        })
-    })
+            return resolve(stdout);
+        });
+    });
 }
 
 export function completeTask(id?: string) {
-    if (id == null || id == undefined) {
-        id = ''
+    if (id === null || id === undefined) {
+        id = '';
     } else {
-        id = ` ${id}`
+        id = ` ${id}`;
     }
 
-    runCmd(`tsk complete${id}`)
+    runCmd(`task complete${id}`);
 }
 
 
@@ -37,7 +37,7 @@ export function newTask(
     context?: string,
     body?: string
 ) {
-    let cmd = `tsk new ${title}`
+    let cmd = `task new ${title}`
 
     if (priority) {
         cmd += ` --priority ${priority}`
@@ -57,10 +57,10 @@ export function newTask(
 function getFieldValue(parseable: any): [string, number | string] {
     let fieldName = '';
     let valueStr = '';
-    let valueFound = false
+    let valueFound = false;
 
     for (let char in parseable) {
-        if (char == ':') {
+        if (char === ':') {
             valueFound = true;
             continue;
         }
@@ -73,7 +73,7 @@ function getFieldValue(parseable: any): [string, number | string] {
     }
 
     let value: number | string = valueStr;
-    if (fieldName == 'priority') {
+    if (fieldName === 'priority') {
         value = parseFloat(value);
     }
 
@@ -122,10 +122,10 @@ export function newTaskInput(input: string) {
 }
 
 export function incompleteTasks(): Thenable<Array<string>> {
-    return runCmd('tsk query completed = false')
+    return runCmd('task query completed = false')
         .then(output => output.split('\n'));
 }
 
 export function workingOn(): Thenable<string> {
-    return runCmd('tsk next --title-only');
+    return runCmd('task next --title-only');
 }

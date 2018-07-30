@@ -1,11 +1,11 @@
 {
-    "name": "tsk",
-    "displayName": "tsk",
-    "description": "",
-    "version": "0.0.2",
-    "publisher": "tsk",
+    "name": "taskhero",
+    "displayName": "taskhero",
+    "description": "VSCode integration with the taskhero command line tool",
+    "version": "0.0.3",
+    "publisher": "taskhero",
     "repository": {
-        "url": "https://github.com/chasinglogic/vscode-tsk",
+        "url": "https://github.com/chasinglogic/vscode-taskhero",
         "type": "git"
     },
     "engines": {

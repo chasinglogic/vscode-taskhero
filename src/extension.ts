@@ -1,12 +1,8 @@
 'use strict';
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import { window, commands, StatusBarItem, ExtensionContext, StatusBarAlignment } from 'vscode';
-import { workingOn, completeTask, newTaskInput, incompleteTasks } from './tsk';
+import { workingOn, completeTask, newTaskInput, incompleteTasks } from './taskhero';
 import { commandWithInput, commandFrom, commandWithQuickPick } from './utils';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext) {
     const status = window
         .createStatusBarItem(StatusBarAlignment.Right, 100);
@@ -43,6 +39,5 @@ function updateStatus(status: StatusBarItem) {
     });
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {
 }
